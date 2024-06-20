@@ -146,6 +146,10 @@ int rtw_early_mode = 1;
 int rtw_led_ctrl = 1; /* default led blink */
 #endif
 
+#if !defined(strlcpy)
+#define strlcpy(a, b, c) strscpy(a, b, c)
+#endif
+
 int rtw_usb_rxagg_mode = 2;/* RX_AGG_DMA=1, RX_AGG_USB=2 */
 module_param(rtw_usb_rxagg_mode, int, 0644);
 
